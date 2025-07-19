@@ -10,6 +10,9 @@ import FoodRequest from "../Components/FoodRequest";
 import FoodDetails from "../Components/FoodDetails";
 import MyFoodRequest from "../Components/MyFoodRequest";
 import ManageMyFoods from "../Components/ManageMyFoods";
+import PrivateRoute from "./PrivateRoute";
+import TermsAndConditions from "../Components/TermsAndConditions";
+import PrivacyPolicy from "../Components/PrivacyPolicy";
 
 
 const Router = createBrowserRouter(
@@ -36,8 +39,18 @@ const Router = createBrowserRouter(
 
                 },
                 {
+                    path: "/terms",
+                    Component: TermsAndConditions,
+
+                },
+                {
+                    path: "/privacy",
+                    Component: PrivacyPolicy,
+
+                },
+                {
                     path: "/available-foods/:id",
-                    Component: FoodDetails ,
+                    element: <PrivateRoute>  <AvailableFoods></AvailableFoods>  </PrivateRoute>
 
                 },
                 {
@@ -52,17 +65,17 @@ const Router = createBrowserRouter(
                 },
                 {
                     path: "/auth/add-food",
-                    Component: AddFood,
+                     element: <PrivateRoute>  <AddFood></AddFood> </PrivateRoute>
 
                 },
                 {
                     path: "/auth/manage-foods",
-                    Component: ManageMyFoods,
+                     element: <PrivateRoute>  <ManageMyFoods></ManageMyFoods>  </PrivateRoute>
 
                 },
                 {
                     path: "/auth/my-food-requests",
-                    Component: MyFoodRequest,
+                     element: <PrivateRoute> <MyFoodRequest></MyFoodRequest>  </PrivateRoute>
 
                 }
 

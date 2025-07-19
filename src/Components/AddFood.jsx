@@ -25,12 +25,10 @@ const AddFood = () => {
       status: "available",
     };
 
-    console.log(foodData);
-    console.log(user)
-
+    
     axios.post('http://localhost:3000/foodPost',{
       foodData
-    }  ).then( (res) =>{console.log(res)}  )
+    }  ).then( (res) =>{}  )
     .catch((error) =>{ toast.error(error) } )
 
 

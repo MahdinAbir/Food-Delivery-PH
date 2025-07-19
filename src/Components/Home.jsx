@@ -64,7 +64,7 @@ useEffect(() => {
   alt="Food Sharing Illustration"
   className="w-full max-w-md mx-auto"
   animate={{
-    y: [0, -10, 0], // Up, then down
+    y: [0, -10, 0], // 
   }}
   transition={{
     duration: 6,
@@ -137,7 +137,7 @@ useEffect(() => {
 </section>
 
 
-      {/* How It Works */}
+      
       <section className="px-6 md:px-20 py-16 bg-white">
         <h2 className="text-3xl font-bold text-center mb-12 text-[#2f2f2f]">How It Works</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -159,13 +159,13 @@ useEffect(() => {
         </div>
       </section>
 
-      {/* CTA Section */}
+     
       <section className="bg-[#FFCFCF] py-16 text-center px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#2f2f2f]">
           Join Our Community
         </h2>
         <p className="mb-8 text-gray-700">Together, we can reduce food waste and fight hunger.</p>
-        <Link to="/register" className="btn bg-[#86A788] hover:bg-green-700 text-white font-semibold">
+        <Link to="/auth/register" className="btn bg-[#86A788] hover:bg-green-700 text-white font-semibold">
           Sign Up Now
         </Link>
       </section>

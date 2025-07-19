@@ -131,7 +131,7 @@ return <AlreadyLoggedIn></AlreadyLoggedIn>
 
           <p className="mt-6 text-center text-gray-600 text-sm">
             Don’t have an account?{' '}
-            <Link to="/auth/signup" className="text-[#86A788] font-medium hover:underline">
+            <Link to="/auth/register" className="text-[#86A788] font-medium hover:underline">
               Sign Up Now
             </Link>
           </p>
