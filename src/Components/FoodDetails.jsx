@@ -4,6 +4,7 @@ import axios from "axios";
 import Loader from "./Loader";
 import { AuthContext } from "../Authentication/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
+import { IoFastFoodSharp } from "react-icons/io5";
 
 
 const FoodDetails = () => {
@@ -15,6 +16,12 @@ const FoodDetails = () => {
   const { user } = useContext(AuthContext);
   const userEmail = user?.email || "";
   const requestDate = new Date().toISOString();
+
+  const isValidImageUrl = (url) => {
+  if (!url) return false;
+  return /\.(jpg|jpeg|png|gif|bmp|webp)$/i.test(url);
+};
+
 
   useEffect(() => {
     if (!user) return;
@@ -72,6 +79,31 @@ const FoodDetails = () => {
   return (
     <div className="max-w-xl mx-auto p-6 bg-[#FFEAEA] rounded-2xl shadow-md mt-10">
       <ToastContainer />
+
+      <div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: "1rem",
+    minHeight: "150px", // optional, gives vertical space
+  }}
+>
+  {isValidImageUrl(data.foodImage) ? (
+    <img
+      src={data.foodImage}
+      alt={data.foodName}
+      style={{
+        maxWidth: "150px",
+        maxHeight: "150px",
+        objectFit: "contain",
+        borderRadius: "8px",
+      }}
+    />
+  ) : (
+    <IoFastFoodSharp size={100} color="#748DAE" />
+  )}
+</div>
       
       <h1 className="text-2xl text-center font-bold text-[#748DAE] mb-4">
         {data.foodName}

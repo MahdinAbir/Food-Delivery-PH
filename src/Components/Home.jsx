@@ -47,7 +47,7 @@ useEffect(() => {
             <Link to="/available-foods" className="btn bg-[#FFCFCF] hover:bg-[#f99fe4] border-none text-[#2f2f2f] font-semibold">
               View Foods
             </Link>
-            <Link to="/add-food" className="btn bg-[#86A788] hover:bg-green-600 border-none text-white font-semibold">
+            <Link to="/auth/add-food" className="btn bg-[#86A788] hover:bg-green-600 border-none text-white font-semibold">
               Start Sharing
             </Link>
           </div>
@@ -76,11 +76,10 @@ useEffect(() => {
         </motion.div>
       </section>
 
-      {/* Featured Foods */}
-     {/* Featured Foods */}
+      
 <section className="px-6 md:px-20 py-16 bg-[#FFE2E2] w-full">
   <h2 className="text-3xl font-bold text-center text-[#2f2f2f] mb-12">
-    Featured Foods
+   
   </h2>
 
   {loading ? (
