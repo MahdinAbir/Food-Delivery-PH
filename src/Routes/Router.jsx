@@ -8,6 +8,7 @@ import Managefood from "../Components/Managefood";
 import AddFood from "../Components/AddFood";
 import FoodRequest from "../Components/FoodRequest";
 import FoodDetails from "../Components/FoodDetails";
+import MyFoodRequest from "../Components/MyFoodRequest";
 
 
 const Router = createBrowserRouter(
@@ -60,7 +61,7 @@ const Router = createBrowserRouter(
                 },
                 {
                     path: "/auth/my-food-requests",
-                    Component: FoodRequest,
+                    Component: MyFoodRequest,
 
                 }
 

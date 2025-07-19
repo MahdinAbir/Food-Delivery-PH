@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import axios from "axios";
 import Loader from "./Loader";
 import { AuthContext } from "../Authentication/AuthContext";
+import { toast, ToastContainer } from "react-toastify";
 
 const FoodDetails = () => {
   const { id } = useParams();
@@ -41,21 +42,22 @@ const FoodDetails = () => {
     try {
       await axios.patch(`http://localhost:3000/foodPost-available/${food._id}`, {
         status: "requested",
-        notes: additionalNotes, // optional, if you want to update notes too
+        AdditionalNotes: additionalNotes, 
       });
-
-      alert("Request successful!");
+console.log(additionalNotes);
+      toast.success("Request successful!");
       setModalOpen(false);
 
       // Optionally refresh or redirect to update UI
     } catch (error) {
       console.error("Request failed:", error);
-      alert("Failed to request food. Try again.");
+      toast.error("Failed to request food. Try again.");
     }
   };
 
   return (
     <div className="max-w-xl mx-auto p-6 bg-[#FFEAEA] rounded-2xl shadow-md mt-10">
+        <ToastContainer></ToastContainer>
       <h1 className="text-2xl text-center font-bold text-[#748DAE] mb-4">
         {data.foodName}
       </h1>
@@ -75,7 +77,7 @@ const FoodDetails = () => {
         <strong>Expires On:</strong> {new Date(data.expireDate).toLocaleDateString()}
       </p>
       <p className="text-[#4B5563] mb-4">
-        <strong>Additional Notes:</strong> {data.notes || "N/A"}
+        <strong> Notes:</strong> {data.notes || "N/A"}
       </p>
 
       {/* Request Button */}
@@ -173,7 +175,7 @@ const FoodDetails = () => {
             className="input input-bordered w-full mb-3"
           />
 
-          <label className="block font-medium">Additional Notes</label>
+          <label className="block font-medium"> Additional Notes</label>
           <textarea
             value={additionalNotes}
             onChange={(e) => setAdditionalNotes(e.target.value)}

@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 import { AuthContext } from "../Authentication/AuthContext";
 import axios from "axios";
@@ -32,7 +32,7 @@ const AddFood = () => {
       foodData
     }  ).then( (res) =>{console.log(res)}  )
     .catch((error) =>{ toast.error(error) } )
-    
+
 
     // now send to backend...
     toast.success("Food item added successfully!");
@@ -41,6 +41,7 @@ const AddFood = () => {
 
   return (
     <div className="max-w-4xl mx-auto my-12 p-6 rounded-2xl shadow-md bg-[#FFF9BD] border border-[#DEE791]">
+      <ToastContainer></ToastContainer>
       <h2 className="text-3xl font-semibold text-center text-[#748DAE] mb-8">
         🍽️ Add a New Food Item
       </h2>
