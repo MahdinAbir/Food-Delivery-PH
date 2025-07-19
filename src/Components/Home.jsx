@@ -4,13 +4,34 @@ import { motion } from "framer-motion";
 
 import { FaUtensils, FaCheckCircle, FaHandsHelping } from "react-icons/fa";
 import { Link } from "react-router";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 
 const Home = () => {
+
+  const [featuredFoods, setFeaturedFoods] = useState([]);
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+  axios
+    .get("http://localhost:3000/foodPost-available")
+    .then((res) => {
+      setFeaturedFoods(res.data.slice(0, 6)); // show max 6 foods
+      setLoading(false);
+    })
+    .catch((error) => {
+      console.error("Error fetching featured foods:", error);
+      setLoading(false);
+    });
+}, []);
+
+  
   return (
-    <div className="bg-amber-50 text-[#2f2f2f]">
+    <div className="bg-[#FFF9BD] text-[#2f2f2f]">
       {/* Hero Section */}
       <section className="min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-16 gap-10">
-        <motion
+        <motion.div
           initial={{ x: -80, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
@@ -30,7 +51,7 @@ const Home = () => {
               Start Sharing
             </Link>
           </div>
-        </motion>
+        </motion.div>
 
         <motion.div
           initial={{ x: 80, opacity: 0 }}
@@ -38,38 +59,84 @@ const Home = () => {
           transition={{ duration: 1 }}
           className="flex-1"
         >
-          <img
-            src="https://i.ibb.co/5khdBv2/food-sharing.png"
-            alt="Food Sharing Illustration"
-            className="w-full max-w-md mx-auto"
-          />
+         <motion.img
+  src="https://i.ibb.co/0yX3P0qP/pexels-picha-6210433.jpg"
+  alt="Food Sharing Illustration"
+  className="w-full max-w-md mx-auto"
+  animate={{
+    y: [0, -10, 0], // Up, then down
+  }}
+  transition={{
+    duration: 6,
+    repeat: Infinity,
+    repeatType: "loop",
+    ease: "easeInOut",
+  }}
+/>
         </motion.div>
       </section>
 
       {/* Featured Foods */}
-      <section className="px-6 md:px-20 py-16 bg-[#FFE2E2]">
-        <h2 className="text-3xl font-bold text-center text-[#2f2f2f] mb-12">Featured Foods</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className="card bg-white shadow-lg rounded-xl overflow-hidden">
-              <figure><img src="https://source.unsplash.com/300x200/?food" alt="Food" /></figure>
-              <div className="card-body">
-                <h2 className="card-title">Delicious Meal #{i + 1}</h2>
-                <p>Quantity: {Math.floor(Math.random() * 5) + 1}</p>
-                <p>Location: Dhaka</p>
-                <div className="card-actions justify-end">
-                  <Link to="/login" className="btn btn-sm bg-[#FFCFCF] hover:bg-[#FFC2C2] text-[#2f2f2f]">View Details</Link>
-                </div>
-              </div>
-            </div>
-          ))}
+     {/* Featured Foods */}
+<section className="px-6 md:px-20 py-16 bg-[#FFE2E2] w-full">
+  <h2 className="text-3xl font-bold text-center text-[#2f2f2f] mb-12">
+    Featured Foods
+  </h2>
+
+  {loading ? (
+    <p className="text-center text-lg text-gray-600">Loading featured foods...</p>
+  ) : featuredFoods.length === 0 ? (
+    <div className="flex items-center justify-center h-[50vh]">
+      <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#9ECAD6] text-center">
+        No Food Available Right Now 🍽️
+      </p>
+    </div>
+  ) : (
+    <div
+      className={`grid gap-6 w-full justify-center  ${
+        featuredFoods.length === 1
+          ? "grid-1  "
+          : featuredFoods.length === 2
+          ? "grid-cols-1 sm:grid-cols-2"
+          : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+      }`}
+    >
+      {featuredFoods.map((food) => (
+        <div
+          key={food.foodData._id}
+          className="bg-white border border-[#A3DC9A] rounded-2xl p-6 shadow-md hover:shadow-xl  transition-all text-center"
+        >
+          <h3 className="text-xl font-semibold text-[#86A788] mb-2">
+            {food.foodData.foodName}
+          </h3>
+          <p className="text-sm text-[#4B5563] mb-1">
+            <span className="font-medium">Quantity:</span> {food.foodData.quantity}
+          </p>
+          <p className="text-sm text-[#4B5563] mb-1">
+            <span className="font-medium">Location:</span>{" "}
+            {food.foodData.pickupLocation}
+          </p>
+          <p className="text-sm text-[#4B5563]">
+            <span className="font-medium">Expires On:</span>{" "}
+            {new Date(food.foodData.expireDate).toLocaleDateString()}
+          </p>
         </div>
-        <div className="text-center mt-8">
-          <Link to="/available-foods" className="btn btn-outline text-[#86A788] border-[#86A788] hover:bg-[#86A788] hover:text-white">
-            Show All
-          </Link>
-        </div>
-      </section>
+      ))}
+    </div>
+  )}
+
+  {featuredFoods.length > 0 && (
+    <div className="text-center mt-12">
+      <Link
+        to="/available-foods"
+        className="btn btn-outline text-[#86A788] border-[#86A788] hover:bg-[#86A788] hover:text-white"
+      >
+        Show All
+      </Link>
+    </div>
+  )}
+</section>
+
 
       {/* How It Works */}
       <section className="px-6 md:px-20 py-16 bg-white">

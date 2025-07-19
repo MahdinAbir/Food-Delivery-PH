@@ -4,11 +4,12 @@ import Home from "../Components/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AvailableFoods from "../Components/AvailableFoods";
-import Managefood from "../Components/Managefood";
+
 import AddFood from "../Components/AddFood";
 import FoodRequest from "../Components/FoodRequest";
 import FoodDetails from "../Components/FoodDetails";
 import MyFoodRequest from "../Components/MyFoodRequest";
+import ManageMyFoods from "../Components/ManageMyFoods";
 
 
 const Router = createBrowserRouter(
@@ -56,7 +57,7 @@ const Router = createBrowserRouter(
                 },
                 {
                     path: "/auth/manage-foods",
-                    Component: Managefood,
+                    Component: ManageMyFoods,
 
                 },
                 {

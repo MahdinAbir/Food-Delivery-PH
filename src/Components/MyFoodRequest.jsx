@@ -9,25 +9,33 @@ const MyFoodRequest = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!user?.email) return;
+    const fetchRequests = async () => {
+      if (!user?.email || !user?.uid) return;
 
-    setLoading(true);
+      setLoading(true);
 
-    axios
-      .get(`http://localhost:3000/foodRequest`, {
-        params: {
-          email: user.email,
-          status: "requested",
-        },
-      })
-      .then((res) => {
+      try {
+        const token = await user.getIdToken(); // ✅ get Firebase token
+
+        const res = await axios.get(`http://localhost:3000/foodRequest`, {
+          params: {
+            email: user.email,
+            status: "requested",
+          },
+          headers: {
+            Authorization: `Bearer ${token}`, // ✅ add token to header
+          },
+        });
+
         setRequests(res.data);
-        setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching requests:", error);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchRequests();
   }, [user]);
 
   if (loading) return <Loader />;

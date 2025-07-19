@@ -34,7 +34,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-[#dddddd] text-[#2f2f2f] shadow-2xl px-6">
+    <div className="navbar bg-[#9ECAD6] text-[#2f2f2f] shadow-2xl px-6">
       <div className="navbar-start">
         <div className="dropdown md:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -49,7 +49,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to="/" className="text-2xl font-bold text-[#86A788]">FoodShare</Link>
+        <Link to="/" className="text-2xl font-bold text-[#3E0A0A]">FoodShare</Link>
       </div>
 
       <div className="navbar-center hidden md:flex gap-4">
