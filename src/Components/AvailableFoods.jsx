@@ -6,6 +6,7 @@ import Loader from "./Loader";
 const AvailableFood = () => {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     axios
@@ -20,6 +21,10 @@ const AvailableFood = () => {
       });
   }, []);
 
+  const filteredFoods = foods.filter((food) =>
+    food.foodData.foodName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   if (loading) {
     return <Loader />;
   }
@@ -30,15 +35,30 @@ const AvailableFood = () => {
         Available Food Items
       </h1>
 
+      {/* Search input */}
+      <input
+        type="text"
+        placeholder="Search food by name..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="mb-6 p-2 border border-gray-300 rounded-md w-full max-w-md focus:outline-none focus:ring-2 focus:ring-[#748DAE]"
+      />
+
       {foods.length === 0 ? (
         <div className="flex items-center justify-center w-full h-[60vh]">
           <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#9ECAD6] text-center">
             No Food Available Right Now 🍽️
           </p>
         </div>
+      ) : filteredFoods.length === 0 ? (
+        <div className="flex items-center justify-center w-full h-[60vh]">
+          <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#9ECAD6] text-center">
+            No Food Available Based On Your Search Name 🔍
+          </p>
+        </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-          {foods.map((food) => (
+          {filteredFoods.map((food) => (
             <div
               key={food._id}
               className="bg-[#FFF9BD] border border-[#A3DC9A] rounded-2xl p-5 shadow-lg hover:shadow-2xl transition-all"
