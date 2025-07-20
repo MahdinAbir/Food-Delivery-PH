@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import { AuthContext } from "../Authentication/AuthContext";
 import axios from "axios";
@@ -32,7 +32,7 @@ const AddFood = () => {
     .catch((error) =>{ toast.error(error) } )
 
 
-    // now send to backend...
+  
     toast.success("Food item added successfully!");
     form.reset();
   };
@@ -57,7 +57,7 @@ const AddFood = () => {
           />
         </div>
 
-        {/* Food Image */}
+      
         <div>
           <label className="block text-[#748DAE] font-medium mb-1">Food Image URL</label>
           <input
@@ -69,7 +69,7 @@ const AddFood = () => {
           />
         </div>
 
-        {/* Quantity */}
+       
         <div>
           <label className="block text-[#748DAE] font-medium mb-1">Food Quantity</label>
           <input
@@ -82,7 +82,7 @@ const AddFood = () => {
           />
         </div>
 
-        {/* Pickup Location */}
+        
         <div>
           <label className="block text-[#748DAE] font-medium mb-1">Pickup Location</label>
           <input
@@ -94,7 +94,7 @@ const AddFood = () => {
           />
         </div>
 
-        {/* Expire Date */}
+        
         <div>
           <label className="block text-[#748DAE] font-medium mb-1">Expire Date & Time</label>
           <input
@@ -105,7 +105,7 @@ const AddFood = () => {
           />
         </div>
 
-        {/* Additional Notes */}
+        
         <div>
           <label className="block text-[#748DAE] font-medium mb-1">Additional Notes</label>
           <textarea
@@ -116,14 +116,14 @@ const AddFood = () => {
           ></textarea>
         </div>
 
-        {/* Donor Info (Auto-filled from Auth) */}
+        
         <div className="col-span-full bg-[#FFEAEA] rounded-md p-4 mt-2">
           <h4 className="text-[#9ECAD6] font-semibold mb-2">Donor Info</h4>
           <p><span className="font-medium">Name:</span> {user?.displayName || "N/A"}</p>
           <p><span className="font-medium">Email:</span> {user?.email || "N/A"}</p>
         </div>
 
-        {/* Submit Button */}
+        
         <div className="col-span-full text-center mt-4">
           <button
             type="submit"

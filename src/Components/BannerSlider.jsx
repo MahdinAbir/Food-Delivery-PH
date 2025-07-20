@@ -57,7 +57,7 @@ const BannerSlider = () => {
         )}
       </AnimatePresence>
 
-      {/* Dots Navigation */}
+      
       <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
         {slides.map((_, index) => (
           <button
