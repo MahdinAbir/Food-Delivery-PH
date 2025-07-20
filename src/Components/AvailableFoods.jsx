@@ -7,6 +7,8 @@ const AvailableFood = () => {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [column, setcolumn] = useState(true); 
+
 
   useEffect(() => {
     axios
@@ -43,6 +45,13 @@ const AvailableFood = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
         className="mb-6 p-2 border border-gray-300 rounded-md w-full max-w-md focus:outline-none focus:ring-2 focus:ring-[#748DAE]"
       />
+      <button
+  onClick={() => setcolumn(!column)} // Step 2
+  className="mb-4 px-4 py-2 bg-[#748DAE] text-white rounded hover:bg-[#5b6f90] transition"
+>
+  Change Layout
+</button>
+
 
       {foods.length === 0 ? (
         <div className="flex items-center justify-center w-full h-[60vh]">
@@ -57,7 +66,12 @@ const AvailableFood = () => {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        <div
+  className={`grid grid-cols-1 sm:grid-cols-2 ${
+    column ? "lg:grid-cols-3" : "lg:grid-cols-2"
+  } gap-6 w-full`}
+>
+
           {filteredFoods.map((food) => (
             <div
               key={food._id}
