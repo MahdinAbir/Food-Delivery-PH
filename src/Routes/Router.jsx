@@ -50,7 +50,7 @@ const Router = createBrowserRouter(
                 },
                 {
                     path: "/available-foods/:id",
-                    element: <PrivateRoute>  <AvailableFoods></AvailableFoods>  </PrivateRoute>
+                    element: <PrivateRoute>  <FoodDetails></FoodDetails>  </PrivateRoute>
 
                 },
                 {

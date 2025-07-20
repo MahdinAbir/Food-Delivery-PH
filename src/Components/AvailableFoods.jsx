@@ -40,7 +40,7 @@ const AvailableFood = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {foods.map((food) => (
             <div
-              key={food.foodData._id}
+              key={food._id}
               className="bg-[#FFF9BD] border border-[#A3DC9A] rounded-2xl p-5 shadow-lg hover:shadow-2xl transition-all"
             >
               <h2 className="text-xl font-semibold text-[#9ECAD6] mb-2">

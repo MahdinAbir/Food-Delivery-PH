@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../Authentication/AuthContext";
 import Loader from "./Loader"; // your loader component
+import Lottie from "lottie-react";
+import Animation from "../assets/No-Data.json";
 
 const MyFoodRequest = () => {
   const { user } = useContext(AuthContext);
@@ -19,8 +21,7 @@ const MyFoodRequest = () => {
 
         const res = await axios.get(`http://localhost:3000/foodRequest`, {
           params: {
-            email: user.email,
-            status: "requested",
+            email: user.email, // only email is needed
           },
           headers: {
             Authorization: `Bearer ${token}`, // ✅ add token to header
@@ -42,9 +43,14 @@ const MyFoodRequest = () => {
 
   if (requests.length === 0)
     return (
-      <p className="text-center text-gray-500 mt-6">
-        You have not requested any foods yet.
-      </p>
+      <div>
+        <p className="text-center text-gray-500 text-4xl my-20">
+          You have not requested any foods yet.
+        </p>
+        <div className="flex items-center justify-center min-h-[calc(100vh-100px)]">
+          <Lottie animationData={Animation} loop={true} />
+        </div>
+      </div>
     );
 
   return (

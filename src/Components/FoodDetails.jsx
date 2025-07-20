@@ -23,26 +23,18 @@ const FoodDetails = () => {
 };
 
 
-  useEffect(() => {
-    if (!user) return;
-
-    user.getIdToken().then((token) => {
-      axios
-        .get(`http://localhost:3000/foodPost-available/${id}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-        .then((res) => {
-          setFood(res.data);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error("Error fetching food details:", error);
-          setLoading(false);
-        });
+ useEffect(() => {
+  axios
+    .get(`http://localhost:3000/foodPost-available/${id}`)
+    .then((res) => {
+      setFood(res.data);
+      setLoading(false);
+    })
+    .catch((error) => {
+      console.error("Error fetching food details:", error);
+      setLoading(false);
     });
-  }, [id, user]);
+}, [id]);
 
   if (loading) return <Loader />;
   if (!food || !food.foodData)
