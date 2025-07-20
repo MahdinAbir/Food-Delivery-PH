@@ -39,7 +39,7 @@ const AddFood = () => {
 
   return (
     <div className="max-w-4xl mx-auto my-12 p-6 rounded-2xl shadow-md bg-[#FFF9BD] border border-[#DEE791]">
-      <ToastContainer></ToastContainer>
+     
       <h2 className="text-3xl font-semibold text-center text-[#748DAE] mb-8">
         🍽️ Add a New Food Item
       </h2>

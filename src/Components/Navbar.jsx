@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, Navigate, NavLink } from "react-router";
 
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 import { AuthContext } from "../Authentication/AuthContext";
 import Loader from "./Loader";
@@ -14,6 +14,10 @@ const Navbar = () => {
       .then(() => toast.success("Logged Out Successfully"))
       .catch((err) => toast.error(err.message));
   };
+
+  
+
+
 
   if (loading) {
     return <Loader />;
@@ -35,6 +39,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-[#9999ff] text-[#2f2f2f] shadow-2xl px-6">
+      
       <div className="navbar-start">
         <div className="dropdown md:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -66,9 +71,7 @@ const Navbar = () => {
                 className="w-10 h-10 rounded-full border-2 border-[#86A788]"
                 onError={(e) => (e.target.src = "https://i.ibb.co/rR8wtNZM/profile-user.png")}
               />
-              <div className="absolute left-1/2 -translate-x-1/2 -top-8 bg-[#948979] text-white text-sm px-3 py-1 rounded hidden group-hover:block whitespace-nowrap">
-                {user.displayName || "User"}
-              </div>
+              
             </div>
             <button onClick={handleLogout} className="btn bg-[#FFCFCF] hover:bg-[#FFE2E2]">
               Logout

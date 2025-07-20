@@ -21,32 +21,34 @@ const Login = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const navigateNow = () => {
-    setTimeout(() => {
-      navigate(from, { replace: true });
-    }, 1);
-  };
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      await logIn(email, password);
-      toast.success('Logged In Successfully');
-      navigateNow();
-    } catch (error) {
-      toast.error(error.message);
-    }
-  };
+  e.preventDefault();
+  try {
+    await logIn(email, password);
+    toast.success('Logged In Successfully', {
+      position: "top-center",
+      autoClose: 1200,
+      onClose: () => navigate(from, { replace: true }), 
+    });
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
 
-  const handleGoogleLogin = async () => {
-    try {
-      await LoginGoogle();
-      toast.success('Logged In Successfully');
-      navigateNow();
-    } catch (error) {
-      toast.error(error.message);
-    }
-  };
+const handleGoogleLogin = async () => {
+  try {
+    await LoginGoogle();
+    toast.success('Logged In Successfully', {
+      position: "top-center",
+      autoClose: 1200,
+      onClose: () => navigate(from, { replace: true }), 
+    });
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
 
   const handleForgetPass = () => {
     const currentEmail = emailRef.current?.value || '';
@@ -60,7 +62,7 @@ return <AlreadyLoggedIn></AlreadyLoggedIn>
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#FFFDEC] px-4">
-      <ToastContainer />
+      
       <div className="flex flex-col lg:flex-row w-full max-w-5xl shadow-xl rounded-2xl overflow-hidden bg-white">
         {/* Left Section */}
         <div className="w-full lg:w-1/2 bg-[#F7F7F7] flex flex-col items-center justify-center p-10">

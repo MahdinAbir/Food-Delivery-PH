@@ -6,13 +6,14 @@ import Register from "../Pages/Register";
 import AvailableFoods from "../Components/AvailableFoods";
 
 import AddFood from "../Components/AddFood";
-import FoodRequest from "../Components/FoodRequest";
+
 import FoodDetails from "../Components/FoodDetails";
 import MyFoodRequest from "../Components/MyFoodRequest";
 import ManageMyFoods from "../Components/ManageMyFoods";
 import PrivateRoute from "./PrivateRoute";
 import TermsAndConditions from "../Components/TermsAndConditions";
 import PrivacyPolicy from "../Components/PrivacyPolicy";
+import Error from "../Components/Error";
 
 
 const Router = createBrowserRouter(
@@ -86,8 +87,9 @@ const Router = createBrowserRouter(
         },
 
 
-        {path: "/Home",
-            element: <Home></Home>
+        
+        {path: "/*",
+            element: <Error></Error>
         },
 
         
