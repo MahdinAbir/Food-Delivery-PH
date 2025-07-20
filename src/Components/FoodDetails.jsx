@@ -25,7 +25,7 @@ const FoodDetails = () => {
 
  useEffect(() => {
   axios
-    .get(`http://localhost:3000/foodPost-available/${id}`)
+    .get(`https://food-share-dun.vercel.app/foodPost-available/${id}`)
     .then((res) => {
       setFood(res.data);
       setLoading(false);
@@ -46,7 +46,7 @@ const FoodDetails = () => {
     try {
       const token = await user.getIdToken();
       await axios.patch(
-        `http://localhost:3000/foodPost-available/${food._id}`,
+        `https://food-share-dun.vercel.app/foodPost-available/${food._id}`,
         {
           status: "requested",
           AdditionalNotes: additionalNotes,

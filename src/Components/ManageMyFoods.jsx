@@ -27,7 +27,7 @@ const ManageMyFoods = () => {
 
     user.getIdToken().then((token) => {
       axios
-        .get("http://localhost:3000/myFoods", {
+        .get("https://food-share-dun.vercel.app/myFoods", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -85,7 +85,7 @@ const ManageMyFoods = () => {
 
       axios
         .patch(
-          `http://localhost:3000/foodPost-available/${selectedFood._id}`,
+          `https://food-share-dun.vercel.app/foodPost-available/${selectedFood._id}`,
           updatePayload,
           {
             headers: {
@@ -96,7 +96,7 @@ const ManageMyFoods = () => {
         .then(() => {
           toast.success("Food updated successfully!");
           closeUpdateModal();
-          return axios.get("http://localhost:3000/myFoods", {
+          return axios.get("https://food-share-dun.vercel.app/myFoods", {
             headers: { Authorization: `Bearer ${token}` },
           });
         })
@@ -115,7 +115,7 @@ const ManageMyFoods = () => {
 
     user.getIdToken().then((token) => {
       axios
-        .delete(`http://localhost:3000/foodPost-available/${foodId}`, {
+        .delete(`https://food-share-dun.vercel.app/foodPost-available/${foodId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

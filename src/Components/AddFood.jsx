@@ -26,7 +26,7 @@ const AddFood = () => {
     };
 
     
-    axios.post('http://localhost:3000/foodPost',{
+    axios.post('https://food-share-dun.vercel.app/foodPost',{
       foodData
     }  ).then( (res) =>{}  )
     .catch((error) =>{ toast.error(error) } )

@@ -19,7 +19,7 @@ const MyFoodRequest = () => {
       try {
         const token = await user.getIdToken(); // ✅ get Firebase token
 
-        const res = await axios.get(`http://localhost:3000/foodRequest`, {
+        const res = await axios.get(`https://food-share-dun.vercel.app/foodRequest`, {
           params: {
             email: user.email, // only email is needed
           },

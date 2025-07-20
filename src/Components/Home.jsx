@@ -15,7 +15,7 @@ const [loading, setLoading] = useState(true);
 
 useEffect(() => {
   axios
-    .get("http://localhost:3000/foodPost-available")
+    .get("https://food-share-dun.vercel.app/foodPost-available")
     .then((res) => {
       setFeaturedFoods(res.data.slice(0, 6)); // show max 6 foods
       setLoading(false);
