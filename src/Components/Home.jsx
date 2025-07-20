@@ -6,6 +6,7 @@ import { FaUtensils, FaCheckCircle, FaHandsHelping } from "react-icons/fa";
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import BannerSlider from "./BannerSlider";
 
 
 const Home = () => {
@@ -62,7 +63,7 @@ useEffect(() => {
          <motion.img
   src="https://i.ibb.co/0yX3P0qP/pexels-picha-6210433.jpg"
   alt="Food Sharing Illustration"
-  className="w-full max-w-md mx-auto"
+  className="w-full   md:max-w-md max-w-sm mx-auto"
   animate={{
     y: [0, -10, 0], // 
   }}
@@ -76,10 +77,11 @@ useEffect(() => {
         </motion.div>
       </section>
 
+<BannerSlider></BannerSlider>
       
 <section className="px-6 md:px-20 py-16 bg-[#FFE2E2] w-full">
   <h2 className="text-3xl font-bold text-center text-[#2f2f2f] mb-12">
-   
+   FEATURED FOODS
   </h2>
 
   {loading ? (
@@ -169,9 +171,10 @@ useEffect(() => {
           Sign Up Now
         </Link>
       </section>
+      
 
       {/* Footer */}
-      <footer className="bg-[#FFFDEC] text-center py-6 border-t border-[#E0E0E0] mt-8">
+      <footer className="bg-[#FFFDEC] text-center py-6 border-t border-[#E0E0E0] ">
         <p className="text-gray-600">© 2025 FoodShare. All rights reserved.</p>
       </footer>
     </div>
