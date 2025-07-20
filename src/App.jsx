@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       
-      <Navbar> <ToastContainer></ToastContainer> </Navbar>
+      <Navbar> </Navbar>
       
       <Outlet></Outlet>
       <Footer></Footer>

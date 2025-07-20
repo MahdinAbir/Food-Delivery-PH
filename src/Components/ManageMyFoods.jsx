@@ -137,7 +137,7 @@ const ManageMyFoods = () => {
 
   return (
     <>
-      <ToastContainer position="top-center" />
+      
       <div className="max-w-4xl mx-auto my-12 px-4">
         <h2 className="text-3xl font-semibold text-center text-[#5A6B7B] mb-6">
           🍱 Manage My Foods

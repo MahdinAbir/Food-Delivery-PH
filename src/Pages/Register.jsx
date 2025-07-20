@@ -74,7 +74,7 @@ const Register = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#FFFDEC] px-4">
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <div className="flex flex-col lg:flex-row w-full max-w-5xl shadow-xl rounded-2xl overflow-hidden bg-white">
         {/* Left Section */}
         <div className="w-full lg:w-1/2 bg-[#F7F7F7] flex flex-col items-center justify-center p-10">
