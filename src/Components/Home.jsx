@@ -38,7 +38,7 @@ useEffect(() => {
           transition={{ duration: 1 }}
           className="flex-1 space-y-6"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-[#86A788] leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-[#1B0B2F] leading-tight">
             Share Food. <br /> Spread Kindness.
           </h1>
           <p className="text-lg text-gray-700">
@@ -48,7 +48,7 @@ useEffect(() => {
             <Link to="/available-foods" className="btn bg-[#FFCFCF] hover:bg-[#f99fe4] border-none text-[#2f2f2f] font-semibold">
               View Foods
             </Link>
-            <Link to="/auth/add-food" className="btn bg-[#86A788] hover:bg-green-600 border-none text-white font-semibold">
+            <Link to="/auth/add-food" className="btn bg-[#1B0B2F] hover:bg-green-600 border-none text-white font-semibold">
               Start Sharing
             </Link>
           </div>
@@ -79,7 +79,7 @@ useEffect(() => {
 
 <BannerSlider></BannerSlider>
       
-<section className="px-6 md:px-20 py-16 bg-[#FFE2E2] w-full">
+<section className="px-6 md:px-20 py-16 bg-[#a988d6ad] w-full">
   <h2 className="text-3xl font-bold text-center text-[#2f2f2f] mb-12">
    FEATURED FOODS
   </h2>
@@ -107,7 +107,7 @@ useEffect(() => {
           key={food.foodData._id}
           className="bg-white border border-[#A3DC9A] rounded-2xl p-6 shadow-md hover:shadow-xl  transition-all text-center"
         >
-          <h3 className="text-xl font-semibold text-[#86A788] mb-2">
+          <h3 className="text-xl font-semibold text-[#1B0B2F] mb-2">
             {food.foodData.foodName}
           </h3>
           <p className="text-sm text-[#4B5563] mb-1">
@@ -130,7 +130,7 @@ useEffect(() => {
     <div className="text-center mt-12">
       <Link
         to="/available-foods"
-        className="btn btn-outline text-[#86A788] border-[#86A788] hover:bg-[#86A788] hover:text-white"
+        className="btn btn-outline text-[#1B0B2F] border-[#1B0B2F] hover:bg-[#1B0B2F] hover:text-white"
       >
         Show All
       </Link>
@@ -144,17 +144,17 @@ useEffect(() => {
         <h2 className="text-3xl font-bold text-center mb-12 text-[#2f2f2f]">How It Works</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
-            <FaUtensils className="text-5xl mx-auto text-[#86A788]" />
+            <FaUtensils className="text-5xl mx-auto text-[#1B0B2F]" />
             <h3 className="text-xl font-semibold mt-4">Add Food</h3>
             <p className="text-gray-600">Share any surplus food you have with the community.</p>
           </div>
           <div>
-            <FaHandsHelping className="text-5xl mx-auto text-[#86A788]" />
+            <FaHandsHelping className="text-5xl mx-auto text-[#1B0B2F]" />
             <h3 className="text-xl font-semibold mt-4">Request Food</h3>
             <p className="text-gray-600">View available items and request what you need.</p>
           </div>
           <div>
-            <FaCheckCircle className="text-5xl mx-auto text-[#86A788]" />
+            <FaCheckCircle className="text-5xl mx-auto text-[#1B0B2F]" />
             <h3 className="text-xl font-semibold mt-4">Pickup & Enjoy</h3>
             <p className="text-gray-600">Arrange pickup and enjoy fresh food, no waste.</p>
           </div>
@@ -162,12 +162,12 @@ useEffect(() => {
       </section>
 
      
-      <section className="bg-[#FFCFCF] py-16 text-center px-6">
+      <section className="bg-[#a988d6ad] py-16 text-center px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#2f2f2f]">
           Join Our Community
         </h2>
         <p className="mb-8 text-gray-700">Together, we can reduce food waste and fight hunger.</p>
-        <Link to="/auth/register" className="btn bg-[#86A788] hover:bg-green-700 text-white font-semibold">
+        <Link to="/auth/register" className="btn bg-[#1B0B2F] hover:bg-green-700 text-white font-semibold">
           Sign Up Now
         </Link>
       </section>
