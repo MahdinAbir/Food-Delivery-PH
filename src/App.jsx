@@ -11,12 +11,20 @@ function App() {
 
   return (
     <>
+      <div className='flex flex-col min-h-screen ' >
+
+
+
+      <div className='pt-10' >  <Navbar> </Navbar> </div>
       
-      <Navbar> </Navbar>
+      <div className='flex-grow' > <Outlet></Outlet>   </div>
+
       
-      <Outlet></Outlet>
       <Footer></Footer>
       
+
+
+      </div>
       
     </>
   )

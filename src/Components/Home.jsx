@@ -173,10 +173,8 @@ useEffect(() => {
       </section>
       
 
-      {/* Footer */}
-      <footer className="bg-[#FFFDEC] text-center py-6 border-t border-[#E0E0E0] ">
-        <p className="text-gray-600">© 2025 FoodShare. All rights reserved.</p>
-      </footer>
+      
+     
     </div>
   );
 };

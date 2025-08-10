@@ -38,9 +38,11 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-[#a988d6ad] text-[#2f2f2f] shadow-2xl px-6 sticky ">
+    <div className="navbar bg-[#a988d6] backdrop-blur-md shadow-lg text-[#2f2f2f] px-6 fixed top-0 left-0 w-full z-50">
+
+
       
-      <div className="navbar-start">
+      <div className="navbar-start ">
         <div className="dropdown md:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
