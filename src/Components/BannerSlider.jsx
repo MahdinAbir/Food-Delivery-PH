@@ -34,7 +34,13 @@ const BannerSlider = () => {
   };
 
   return (
-    <div className="relative mx-auto max-w-4xl w-full h-72 sm:h-96 overflow-hidden rounded-xl shadow-lg bg-gradient-to-r from-[#B0DB9C] via-[#D4E9B9] to-[#A4C06C] mb-10 ">
+    <div
+  className="relative mx-auto max-w-4xl w-full h-72 sm:h-96 overflow-hidden rounded-xl shadow-lg mb-10"
+  style={{
+    background:
+      "radial-gradient(circle, hsla(265, 49%, 69%, 1) 20%, hsla(226, 69%, 30%, 1) 100%)",
+  }}
+>
       <AnimatePresence mode="wait">
         {slides.map(
           (slide, index) =>
