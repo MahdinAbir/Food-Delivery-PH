@@ -127,7 +127,7 @@ const AddFood = () => {
         <div className="col-span-full text-center mt-4">
           <button
             type="submit"
-            className="bg-[#A3DC9A] hover:bg-[#9ECAD6] text-[#3b3b3b] font-semibold px-6 py-2 rounded-full shadow-md transition duration-300"
+            className="bg-[#f3f5f0] hover:bg-[#f5c1c1] text-black font-semibold px-6 py-2 rounded-sm shadow-md transition cursor-pointer duration-300"
           >
             ➕ Add Food
           </button>

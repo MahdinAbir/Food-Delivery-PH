@@ -75,13 +75,13 @@ const Navbar = () => {
               />
               
             </div>
-            <button onClick={handleLogout} className="btn bg-[#FFCFCF] hover:bg-[#FFE2E2]">
+            <button onClick={handleLogout} className="btn bg-[#f3f5f0] hover:bg-[#FFE2E2]">
               Logout
             </button>
           </div>
         ) : (
           <>
-            <Link to="/auth/Login" className="btn bg-[#FFCFCF] hover:bg-[#FFE2E2]">Login</Link>
+            <Link to="/auth/Login" className="btn bg-[#f3f5f0] hover:bg-[#b2a1a1]">Login</Link>
             <Link to="/auth/Register" className="btn bg-[#301452] hover:bg-[#4040bf] text-white">Register</Link>
           </>
         )}
