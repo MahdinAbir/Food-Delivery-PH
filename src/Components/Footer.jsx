@@ -3,12 +3,12 @@ import { NavLink } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#FFFDEC] text-[#2f2f2f] py-10 border-t border-[#FFE2E2]">
+    <footer className="bg-[#FFF9BD] text-[#2f2f2f] py-10 border-t border-[#FFE2E2]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
 
         {/* Brand Section */}
         <div>
-          <h2 className="text-2xl font-bold mb-2 text-[#1B0B2F]">FoodShare</h2>
+          <h2 className="text-2xl font-bold mb-2 text-[#301452]">FoodShare</h2>
           <p className="text-sm max-w-xs">
             Connecting communities by sharing surplus food and spreading kindness.
           </p>
@@ -16,12 +16,12 @@ const Footer = () => {
 
         {/* Useful Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-3 text-[#1B0B2F]">Useful Links</h3>
+          <h3 className="text-lg font-semibold mb-3 text-[#301452]">Useful Links</h3>
           <ul className="space-y-2 text-[#2f2f2f]">
             <li>
               <NavLink
                 to="/terms"
-                className="hover:text-[#1B0B2F] transition-colors duration-300"
+                className="hover:text-[#301452] transition-colors duration-300"
               >
                 Terms & Conditions
               </NavLink>
@@ -29,7 +29,7 @@ const Footer = () => {
             <li>
               <NavLink
                 to="/privacy"
-                className="hover:text-[#1B0B2F] transition-colors duration-300"
+                className="hover:text-[#301452] transition-colors duration-300"
               >
                 Privacy Policy
               </NavLink>
@@ -40,7 +40,7 @@ const Footer = () => {
         {/* Social Media */}
         <div>
           <p className="text-[#2f2f2f] mb-3 font-semibold">Connect With Us</p>
-          <div className="flex space-x-6 text-[#1B0B2F] text-2xl">
+          <div className="flex space-x-6 text-[#301452] text-2xl">
             <a
               href="https://www.facebook.com/mahdin.hossenabir/"
               target="_blank"

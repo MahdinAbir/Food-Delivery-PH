@@ -100,7 +100,7 @@ const Register = () => {
                 name="name"
                 required
                 placeholder="Your name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#1B0B2F] text-gray-800"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#301452] text-gray-800"
               />
             </div>
 
@@ -111,7 +111,7 @@ const Register = () => {
                 name="photoURL"
                 required
                 placeholder="Link to your profile photo"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#1B0B2F] text-gray-800"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#301452] text-gray-800"
               />
             </div>
 
@@ -122,7 +122,7 @@ const Register = () => {
                 name="email"
                 required
                 placeholder="Enter your email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#1B0B2F] text-gray-800"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#301452] text-gray-800"
               />
             </div>
 
@@ -134,7 +134,7 @@ const Register = () => {
           name="password"
           required
           placeholder="Enter your password"
-          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#1B0B2F] text-gray-800"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#301452] text-gray-800"
         />
         <button
           type="button"
@@ -174,7 +174,7 @@ const Register = () => {
 
           <p className="mt-6 text-center text-gray-600 text-sm">
             Already have an account?{' '}
-            <Link to="/auth/login" className="text-[#1B0B2F] font-medium hover:underline">
+            <Link to="/auth/login" className="text-[#301452] font-medium hover:underline">
               Login now
             </Link>
           </p>

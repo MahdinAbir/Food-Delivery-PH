@@ -85,7 +85,7 @@ return <AlreadyLoggedIn></AlreadyLoggedIn>
                 type="email"
                 required
                 placeholder="Enter your email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#1B0B2F] text-gray-800"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#301452] text-gray-800"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -97,7 +97,7 @@ return <AlreadyLoggedIn></AlreadyLoggedIn>
                 type="password"
                 required
                 placeholder="Enter your password"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#1B0B2F] text-gray-800"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-[#301452] text-gray-800"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -107,7 +107,7 @@ return <AlreadyLoggedIn></AlreadyLoggedIn>
               <button
                 type="button"
                 onClick={handleForgetPass}
-                className="text-sm text-[#1B0B2F] hover:underline"
+                className="text-sm text-[#301452] hover:underline"
               >
                 Forgot password?
               </button>
@@ -133,7 +133,7 @@ return <AlreadyLoggedIn></AlreadyLoggedIn>
 
           <p className="mt-6 text-center text-gray-600 text-sm">
             Don’t have an account?{' '}
-            <Link to="/auth/register" className="text-[#1B0B2F] font-medium hover:underline">
+            <Link to="/auth/register" className="text-[#301452] font-medium hover:underline">
               Sign Up Now
             </Link>
           </p>

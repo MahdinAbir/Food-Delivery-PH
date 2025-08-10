@@ -29,7 +29,7 @@ useEffect(() => {
 
   
   return (
-    <div className="bg-[#FFF9BD] text-[#2f2f2f]">
+    <div className="bg-[#FFF9BD] text-[#301452]">
       {/* Hero Section */}
       <section className="min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-16 gap-10">
         <motion.div
@@ -38,7 +38,7 @@ useEffect(() => {
           transition={{ duration: 1 }}
           className="flex-1 space-y-6"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-[#1B0B2F] leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-[#301452] leading-tight">
             Share Food. <br /> Spread Kindness.
           </h1>
           <p className="text-lg text-gray-700">
@@ -48,7 +48,7 @@ useEffect(() => {
             <Link to="/available-foods" className="btn bg-[#FFCFCF] hover:bg-[#f99fe4] border-none text-[#2f2f2f] font-semibold">
               View Foods
             </Link>
-            <Link to="/auth/add-food" className="btn bg-[#1B0B2F] hover:bg-green-600 border-none text-white font-semibold">
+            <Link to="/auth/add-food" className="btn bg-[#301452] hover:bg-[#4040bf] border-none text-white font-semibold">
               Start Sharing
             </Link>
           </div>
@@ -80,15 +80,15 @@ useEffect(() => {
 <BannerSlider></BannerSlider>
       
 <section className="px-6 md:px-20 py-16 bg-[#a988d6ad] w-full">
-  <h2 className="text-3xl font-bold text-center text-[#2f2f2f] mb-12">
+  <h2 className="text-3xl font-bold text-center text-[#301452] mb-12">
    FEATURED FOODS
   </h2>
 
   {loading ? (
-    <p className="text-center text-lg text-gray-600">Loading featured foods...</p>
+    <p className="text-center text-lg text-[#1B0B2F]">Loading featured foods...</p>
   ) : featuredFoods.length === 0 ? (
     <div className="flex items-center justify-center h-[50vh]">
-      <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#9ECAD6] text-center">
+      <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1B0B2F] text-center">
         No Food Available Right Now 🍽️
       </p>
     </div>
@@ -105,19 +105,19 @@ useEffect(() => {
       {featuredFoods.map((food) => (
         <div
           key={food.foodData._id}
-          className="bg-white border border-[#A3DC9A] rounded-2xl p-6 shadow-md hover:shadow-xl  transition-all text-center"
+          className="bg-base-100 border border-[#A3DC9A] rounded-2xl p-6 shadow-md hover:shadow-xl  transition-all text-center"
         >
-          <h3 className="text-xl font-semibold text-[#1B0B2F] mb-2">
+          <h3 className="text-xl font-semibold text-[#301452] mb-2">
             {food.foodData.foodName}
           </h3>
-          <p className="text-sm text-[#4B5563] mb-1">
+          <p className="text-sm text-[#1B0B2F] mb-1">
             <span className="font-medium">Quantity:</span> {food.foodData.quantity}
           </p>
-          <p className="text-sm text-[#4B5563] mb-1">
+          <p className="text-sm text-[#1B0B2F] mb-1">
             <span className="font-medium">Location:</span>{" "}
             {food.foodData.pickupLocation}
           </p>
-          <p className="text-sm text-[#4B5563]">
+          <p className="text-sm text-[#1B0B2F]">
             <span className="font-medium">Expires On:</span>{" "}
             {new Date(food.foodData.expireDate).toLocaleDateString()}
           </p>
@@ -130,7 +130,7 @@ useEffect(() => {
     <div className="text-center mt-12">
       <Link
         to="/available-foods"
-        className="btn btn-outline text-[#1B0B2F] border-[#1B0B2F] hover:bg-[#1B0B2F] hover:text-white"
+        className="btn btn-outline text-[#301452] border-[#301452] hover:bg-[#301452] hover:text-white"
       >
         Show All
       </Link>
@@ -144,17 +144,17 @@ useEffect(() => {
         <h2 className="text-3xl font-bold text-center mb-12 text-[#2f2f2f]">How It Works</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
-            <FaUtensils className="text-5xl mx-auto text-[#1B0B2F]" />
+            <FaUtensils className="text-5xl mx-auto text-[#301452]" />
             <h3 className="text-xl font-semibold mt-4">Add Food</h3>
             <p className="text-gray-600">Share any surplus food you have with the community.</p>
           </div>
           <div>
-            <FaHandsHelping className="text-5xl mx-auto text-[#1B0B2F]" />
+            <FaHandsHelping className="text-5xl mx-auto text-[#301452]" />
             <h3 className="text-xl font-semibold mt-4">Request Food</h3>
             <p className="text-gray-600">View available items and request what you need.</p>
           </div>
           <div>
-            <FaCheckCircle className="text-5xl mx-auto text-[#1B0B2F]" />
+            <FaCheckCircle className="text-5xl mx-auto text-[#301452]" />
             <h3 className="text-xl font-semibold mt-4">Pickup & Enjoy</h3>
             <p className="text-gray-600">Arrange pickup and enjoy fresh food, no waste.</p>
           </div>
@@ -167,7 +167,7 @@ useEffect(() => {
           Join Our Community
         </h2>
         <p className="mb-8 text-gray-700">Together, we can reduce food waste and fight hunger.</p>
-        <Link to="/auth/register" className="btn bg-[#1B0B2F] hover:bg-green-700 text-white font-semibold">
+        <Link to="/auth/register" className="btn bg-[#301452] hover:bg-green-700 text-white font-semibold">
           Sign Up Now
         </Link>
       </section>

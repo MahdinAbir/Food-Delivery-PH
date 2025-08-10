@@ -38,7 +38,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-[#a988d6ad] text-[#2f2f2f] shadow-2xl px-6">
+    <div className="navbar bg-[#a988d6ad] text-[#2f2f2f] shadow-2xl px-6 sticky ">
       
       <div className="navbar-start">
         <div className="dropdown md:hidden">
@@ -68,7 +68,7 @@ const Navbar = () => {
               <img
                 src={user.photoURL || "https://i.ibb.co/4f9ZRjT/default-profile.png"}
                 alt="User"
-                className="w-10 h-10 rounded-full border-2 border-[#1B0B2F]"
+                className="w-10 h-10 rounded-full border-2 border-[#301452]"
                 onError={(e) => (e.target.src = "https://i.ibb.co/rR8wtNZM/profile-user.png")}
               />
               
@@ -80,7 +80,7 @@ const Navbar = () => {
         ) : (
           <>
             <Link to="/auth/Login" className="btn bg-[#FFCFCF] hover:bg-[#FFE2E2]">Login</Link>
-            <Link to="/auth/Register" className="btn bg-[#1B0B2F] hover:bg-green-600 text-white">Register</Link>
+            <Link to="/auth/Register" className="btn bg-[#301452] hover:bg-[#4040bf] text-white">Register</Link>
           </>
         )}
       </div>
