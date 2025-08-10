@@ -14,6 +14,7 @@ import PrivateRoute from "./PrivateRoute";
 import TermsAndConditions from "../Components/TermsAndConditions";
 import PrivacyPolicy from "../Components/PrivacyPolicy";
 import Error from "../Components/Error";
+import ContactUs from "../Components/ContactUs";
 
 
 const Router = createBrowserRouter(
@@ -37,6 +38,11 @@ const Router = createBrowserRouter(
                 {
                     path: "/available-foods",
                     Component: AvailableFoods,
+
+                },
+                {
+                    path: "/contact",
+                    Component: ContactUs,
 
                 },
                 {

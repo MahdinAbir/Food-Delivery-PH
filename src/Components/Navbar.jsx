@@ -27,11 +27,15 @@ const Navbar = () => {
     <>
       <NavLink to="/" className="btn btn-ghost text-lg">Home</NavLink>
       <NavLink to="/available-foods" className="btn btn-ghost text-lg">Available Foods</NavLink>
+      {!user && (  <> <NavLink to="/contact" className="btn btn-ghost text-lg">Contact Us</NavLink> 
+       </>     )  }
       {user && (
         <>
           <NavLink to="/auth/add-food" className="btn btn-ghost text-lg">Add Food</NavLink>
           <NavLink to="/auth/manage-foods" className="btn btn-ghost text-lg">Manage My Foods</NavLink>
           <NavLink to="/auth/my-food-requests" className="btn btn-ghost text-lg">My Food Requests</NavLink>
+<NavLink to="/contact" className="btn btn-ghost text-lg">Contact Us</NavLink>
+
         </>
       )}
     </>
@@ -56,7 +60,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to="/" className="text-2xl font-bold text-[#3E0A0A]">FoodShare</Link>
+        <Link to="/" className="text-2xl font-bold text-[#1B0B2F]">FoodShare</Link>
       </div>
 
       <div className="navbar-center hidden md:flex gap-4">

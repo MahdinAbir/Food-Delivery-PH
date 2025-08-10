@@ -47,7 +47,7 @@ const BannerSlider = () => {
             index === current && (
               <motion.div
                 key={index}
-                className="absolute inset-0 flex flex-col justify-center items-center text-center text-[#0C2A4C] px-8"
+                className="absolute inset-0 flex flex-col justify-center items-center text-center text-[#fffffe] px-8"
                 variants={variants}
                 initial="enter"
                 animate="center"
