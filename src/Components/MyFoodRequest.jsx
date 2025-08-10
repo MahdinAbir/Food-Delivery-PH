@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../Authentication/AuthContext";
-import Loader from "./Loader"; // your loader component
+import Loader from "./Loader"; 
 import Lottie from "lottie-react";
 import Animation from "../assets/No-Data.json";
 
@@ -17,14 +17,13 @@ const MyFoodRequest = () => {
       setLoading(true);
 
       try {
-        const token = await user.getIdToken(); // ✅ get Firebase token
+        const token = await user.getIdToken(); 
 
         const res = await axios.get(`https://food-share-dun.vercel.app/foodRequest`, {
           params: {
-            email: user.email, // only email is needed
+            email: user.email, 
           },
           headers: {
-            Authorization: `Bearer ${token}`, // ✅ add token to header
           },
         });
 

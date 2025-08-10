@@ -22,7 +22,7 @@ const AlreadyLoggedIn = () => {
         </motion.h1>
 
         <motion.p
-          className="text-gray-600 mb-6 text-lg"
+          className="text-[#301452] mb-6 text-lg"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}

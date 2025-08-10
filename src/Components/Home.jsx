@@ -146,17 +146,17 @@ useEffect(() => {
           <div>
             <FaUtensils className="text-5xl mx-auto text-[#301452]" />
             <h3 className="text-xl font-semibold mt-4">Add Food</h3>
-            <p className="text-gray-600">Share any surplus food you have with the community.</p>
+            <p className="text-[#301452]">Share any surplus food you have with the community.</p>
           </div>
           <div>
             <FaHandsHelping className="text-5xl mx-auto text-[#301452]" />
             <h3 className="text-xl font-semibold mt-4">Request Food</h3>
-            <p className="text-gray-600">View available items and request what you need.</p>
+            <p className="text-[#301452]">View available items and request what you need.</p>
           </div>
           <div>
             <FaCheckCircle className="text-5xl mx-auto text-[#301452]" />
             <h3 className="text-xl font-semibold mt-4">Pickup & Enjoy</h3>
-            <p className="text-gray-600">Arrange pickup and enjoy fresh food, no waste.</p>
+            <p className="text-[#301452]">Arrange pickup and enjoy fresh food, no waste.</p>
           </div>
         </div>
       </section>

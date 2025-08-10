@@ -67,7 +67,7 @@ return <AlreadyLoggedIn></AlreadyLoggedIn>
         {/* Left Section */}
         <div className="w-full lg:w-1/2 bg-[#F7F7F7] flex flex-col items-center justify-center p-10">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">Welcome Back!</h2>
-          <p className="text-gray-600 text-center max-w-xs">
+          <p className="text-[#301452] text-center max-w-xs">
             Log in to access your account and manage your preferences.
           </p>
         </div>
@@ -75,7 +75,7 @@ return <AlreadyLoggedIn></AlreadyLoggedIn>
         {/* Right Section */}
         <div className="w-full lg:w-1/2 p-10 bg-white flex flex-col justify-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">Login</h2>
-          <p className="text-gray-600 mb-6">Please enter your credentials.</p>
+          <p className="text-[#301452] mb-6">Please enter your credentials.</p>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
@@ -131,7 +131,7 @@ return <AlreadyLoggedIn></AlreadyLoggedIn>
             </button>
           </div>
 
-          <p className="mt-6 text-center text-gray-600 text-sm">
+          <p className="mt-6 text-center text-[#301452] text-sm">
             Don’t have an account?{' '}
             <Link to="/auth/register" className="text-[#301452] font-medium hover:underline">
               Sign Up Now

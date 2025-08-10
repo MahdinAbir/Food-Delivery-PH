@@ -79,7 +79,7 @@ const Register = () => {
         {/* Left Section */}
         <div className="w-full lg:w-1/2 bg-[#F7F7F7] flex flex-col items-center justify-center p-10">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">Join Us Today!</h2>
-          <p className="text-gray-600 text-center max-w-xs">
+          <p className="text-[#301452] text-center max-w-xs">
             Register now to share, receive, and reduce food waste together.
           </p>
           
@@ -90,7 +90,7 @@ const Register = () => {
         {/* Right Section */}
         <div className="w-full lg:w-1/2 p-10 bg-white flex flex-col justify-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">Register</h2>
-          <p className="text-gray-600 mb-6">Create a new account</p>
+          <p className="text-[#301452] mb-6">Create a new account</p>
 
           <form onSubmit={handleRegister} className="space-y-4">
             <div>
@@ -172,7 +172,7 @@ const Register = () => {
             </button>
           </div>
 
-          <p className="mt-6 text-center text-gray-600 text-sm">
+          <p className="mt-6 text-center text-[#301452] text-sm">
             Already have an account?{' '}
             <Link to="/auth/login" className="text-[#301452] font-medium hover:underline">
               Login now

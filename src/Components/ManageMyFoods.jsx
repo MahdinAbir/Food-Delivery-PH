@@ -139,12 +139,12 @@ const ManageMyFoods = () => {
     <>
       
       <div className="max-w-4xl mx-auto my-12 px-4">
-        <h2 className="text-3xl font-semibold text-center text-[#5A6B7B] mb-6">
+        <h2 className="text-3xl font-semibold text-center text-[#301452] mb-6">
           🍱 Manage My Foods
         </h2>
-        <div className="overflow-x-auto bg-white shadow-md rounded-lg border border-[#E2E8F0]">
+        <div className="overflow-x-auto bg-amber-50 shadow-md rounded-lg border border-[#E2E8F0]">
           <table className="min-w-full table-auto">
-            <thead className="bg-[#F0F4F8] text-[#6B7280]">
+            <thead className="bg-[#a988d6ad] text-[#301452]">
               <tr>
                 <th className="px-4 py-3 text-left">Image</th>
                 <th className="px-4 py-3 text-left">Name</th>
@@ -176,24 +176,24 @@ const ManageMyFoods = () => {
                     <td className="px-4 py-3 text-sm font-medium text-gray-700">
                       {item.foodData?.foodName}
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-600">
+                    <td className="px-4 py-3 text-sm text-[#301452]">
                       {item.foodData?.quantity}
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-600">
+                    <td className="px-4 py-3 text-sm text-[#301452]">
                       {item.foodData?.expireDate
                         ? new Date(item.foodData.expireDate).toLocaleDateString()
                         : "N/A"}
                     </td>
-                    <td className="px-4 py-3 text-center space-x-3">
+                    <td className="px-4 py-3  text-center space-x-3">
                       <button
                         onClick={() => openUpdateModal(item)}
-                        className="bg-green-500 hover:bg-green-600 text-white text-sm px-4 py-1 rounded shadow-md transition"
+                        className="bg-green-500 hover:bg-green-600 text-white text-sm  px-4 py-1 rounded shadow-md transition"
                       >
                         ✏️ Update
                       </button>
                       <button
                         onClick={() => handleDelete(item._id)}
-                        className="bg-red-500 hover:bg-red-600 text-white text-sm px-4 py-1 rounded shadow-md transition"
+                        className="bg-red-500 hover:bg-red-600 text-white text-sm  px-4 py-1 rounded shadow-md transition"
                       >
                         🗑️ Delete
                       </button>
@@ -208,118 +208,119 @@ const ManageMyFoods = () => {
 
       {/* Update Modal */}
       {showModal && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50"
-          onClick={closeUpdateModal}
+  <div
+    className="fixed inset-0 bg-white/10 backdrop-blur-md flex items-center justify-center z-50"
+    onClick={closeUpdateModal}
+  >
+    <div
+      className="bg-white rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-lg"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <h3 className="text-xl font-semibold mb-4">Update Food</h3>
+
+      <label className="block mb-2">
+        Name:
+        <input
+          type="text"
+          name="foodName"
+          value={formData.foodName}
+          onChange={handleInputChange}
+          placeholder="Food Name"
+          className="w-full border rounded px-3 py-2 mt-1"
+        />
+      </label>
+
+      <label className="block mb-2">
+        Quantity:
+        <input
+          type="text"
+          name="quantity"
+          value={formData.quantity}
+          onChange={handleInputChange}
+          placeholder="Quantity"
+          className="w-full border rounded px-3 py-2 mt-1"
+        />
+      </label>
+
+      <label className="block mb-2">
+        Pickup Location:
+        <input
+          type="text"
+          name="pickupLocation"
+          value={formData.pickupLocation}
+          onChange={handleInputChange}
+          placeholder="Pickup Location"
+          className="w-full border rounded px-3 py-2 mt-1"
+        />
+      </label>
+
+      <label className="block mb-2">
+        Expire Date:
+        <input
+          type="date"
+          name="expireDate"
+          value={formData.expireDate}
+          onChange={handleInputChange}
+          className="w-full border rounded px-3 py-2 mt-1"
+        />
+      </label>
+
+      <label className="block mb-2">
+        Notes:
+        <textarea
+          name="notes"
+          value={formData.notes}
+          onChange={handleInputChange}
+          placeholder="Additional notes"
+          className="w-full border rounded px-3 py-2 mt-1"
+          rows={3}
+        />
+      </label>
+
+      <label className="block mb-4">
+        Image URL:
+        <input
+          type="text"
+          name="foodImage"
+          value={formData.foodImage}
+          onChange={handleInputChange}
+          placeholder="Image URL"
+          className="w-full border rounded px-3 py-2 mt-1"
+        />
+      </label>
+
+      <label className="block mb-4">
+        Status:
+        <select
+          name="status"
+          value={formData.status}
+          onChange={handleInputChange}
+          className="w-full border rounded px-3 py-2 mt-1"
         >
-          <div
-            className="bg-white rounded-lg p-6 w-96 relative"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h3 className="text-xl font-semibold mb-4">Update Food</h3>
+          <option value="available">Available</option>
+          <option value="requested">Requested</option>
+          <option value="expired">Expired</option>
+        </select>
+      </label>
 
-            <label className="block mb-2">
-              Name:
-              <input
-                type="text"
-                name="foodName"
-                value={formData.foodName}
-                onChange={handleInputChange}
-                placeholder="Food Name"
-                className="w-full border rounded px-3 py-2 mt-1"
-              />
-            </label>
+      <div className="flex justify-end gap-3">
+        <button
+          onClick={closeUpdateModal}
+          className="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400 transition"
+        >
+          Cancel
+        </button>
+        <button
+          onClick={handleUpdateSubmit}
+          className="px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700 transition"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 
-            <label className="block mb-2">
-              Quantity:
-              <input
-                type="text"
-                name="quantity"
-                value={formData.quantity}
-                onChange={handleInputChange}
-                placeholder="Quantity"
-                className="w-full border rounded px-3 py-2 mt-1"
-              />
-            </label>
-
-            <label className="block mb-2">
-              Pickup Location:
-              <input
-                type="text"
-                name="pickupLocation"
-                value={formData.pickupLocation}
-                onChange={handleInputChange}
-                placeholder="Pickup Location"
-                className="w-full border rounded px-3 py-2 mt-1"
-              />
-            </label>
-
-            <label className="block mb-2">
-              Expire Date:
-              <input
-                type="date"
-                name="expireDate"
-                value={formData.expireDate}
-                onChange={handleInputChange}
-                className="w-full border rounded px-3 py-2 mt-1"
-              />
-            </label>
-
-            <label className="block mb-2">
-              Notes:
-              <textarea
-                name="notes"
-                value={formData.notes}
-                onChange={handleInputChange}
-                placeholder="Additional notes"
-                className="w-full border rounded px-3 py-2 mt-1"
-                rows={3}
-              />
-            </label>
-
-            <label className="block mb-4">
-              Image URL:
-              <input
-                type="text"
-                name="foodImage"
-                value={formData.foodImage}
-                onChange={handleInputChange}
-                placeholder="Image URL"
-                className="w-full border rounded px-3 py-2 mt-1"
-              />
-            </label>
-
-            <label className="block mb-4">
-              Status:
-              <select
-                name="status"
-                value={formData.status}
-                onChange={handleInputChange}
-                className="w-full border rounded px-3 py-2 mt-1"
-              >
-                <option value="available">Available</option>
-                <option value="requested">Requested</option>
-                <option value="expired">Expired</option>
-              </select>
-            </label>
-
-            <div className="flex justify-end space-x-3">
-              <button
-                onClick={closeUpdateModal}
-                className="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400 transition"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleUpdateSubmit}
-                className="px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700 transition"
-              >
-                Save
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 };

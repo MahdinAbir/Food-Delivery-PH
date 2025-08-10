@@ -38,16 +38,16 @@ const AddFood = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto my-12 p-6 rounded-2xl shadow-md bg-[#a988d6ad] border border-[#DEE791]">
+    <div className="max-w-4xl mx-auto my-12 p-6 rounded-2xl shadow-md bg-[#a988d6ad] border border-[#a8a4ae]">
      
-      <h2 className="text-3xl font-semibold text-center text-[#748DAE] mb-8">
+      <h2 className="text-3xl font-semibold text-center text-[#301452] mb-8">
         🍽️ Add a New Food Item
       </h2>
       <form onSubmit={handleAddFood} className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         {/* Food Name */}
         <div>
-          <label className="block text-[#748DAE] font-medium mb-1">Food Name</label>
+          <label className="block text-[#301452] font-medium mb-1">Food Name</label>
           <input
             type="text"
             name="foodName"
@@ -59,7 +59,7 @@ const AddFood = () => {
 
       
         <div>
-          <label className="block text-[#748DAE] font-medium mb-1">Food Image URL</label>
+          <label className="block text-[#301452] font-medium mb-1">Food Image URL</label>
           <input
             type="text"
             name="foodImage"
@@ -71,7 +71,7 @@ const AddFood = () => {
 
        
         <div>
-          <label className="block text-[#748DAE] font-medium mb-1">Food Quantity</label>
+          <label className="block text-[#301452] font-medium mb-1">Food Quantity</label>
           <input
             type="number"
             name="quantity"
@@ -84,7 +84,7 @@ const AddFood = () => {
 
         
         <div>
-          <label className="block text-[#748DAE] font-medium mb-1">Pickup Location</label>
+          <label className="block text-[#301452] font-medium mb-1">Pickup Location</label>
           <input
             type="text"
             name="pickupLocation"
@@ -96,7 +96,7 @@ const AddFood = () => {
 
         
         <div>
-          <label className="block text-[#748DAE] font-medium mb-1">Expire Date & Time</label>
+          <label className="block text-[#301452] font-medium mb-1">Expire Date & Time</label>
           <input
             type="datetime-local"
             name="expireDate"
@@ -107,7 +107,7 @@ const AddFood = () => {
 
         
         <div>
-          <label className="block text-[#748DAE] font-medium mb-1">Additional Notes</label>
+          <label className="block text-[#301452] font-medium mb-1">Additional Notes</label>
           <textarea
             name="notes"
             rows="3"
@@ -118,7 +118,7 @@ const AddFood = () => {
 
         
         <div className="col-span-full bg-[#FFEAEA] rounded-md p-4 mt-2">
-          <h4 className="text-[#9ECAD6] font-semibold mb-2">Donor Info</h4>
+          <h4 className="text-[#301452] font-semibold mb-2">Donor Info</h4>
           <p><span className="font-medium">Name:</span> {user?.displayName || "N/A"}</p>
           <p><span className="font-medium">Email:</span> {user?.email || "N/A"}</p>
         </div>
